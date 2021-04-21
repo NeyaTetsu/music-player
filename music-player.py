@@ -1,14 +1,19 @@
 import pygame.mixer
 import tkinter as tk
+import sys
 import os
 import tkinter.filedialog
 import webbrowser
 
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
 
 #ウィンドウを作成
 root = tk.Tk()
 root.title(u'Neya-Tetsu Music Player')
-root.geometry('640x150')
+root.geometry('640x200')
 root.resizable(0,0)
 #プレーヤーフレーム作成
 playerFrame = tk.Frame(root)
@@ -49,13 +54,12 @@ def fileSelect():
     file_path = tkinter.filedialog.askopenfilename(
         filetypes=[("All Support File", "*.*")],
         title="ファイルを開く",
-        initialdir="/Music"
     )
     if file_path != '':
         pygame.mixer.music.unload()
         pygame.mixer.music.load(file_path)
 #GUI
-buttonSelect = tk.Button(playerFrame, text='File select!', font=('',42), relief='ridge', command=fileSelect)
+buttonSelect = tk.Button(playerFrame, text="Let's file select!", font=('',42), relief='ridge', command=fileSelect)
 buttonSelect.pack(fill='x')
 
 #一時停止中かどうか
@@ -72,7 +76,7 @@ def musicPlay():
             pygame.mixer.music.play(-1)
         else:
             pygame.mixer.music.play(0)
-playImage = tk.PhotoImage(file='./asset/play.png')
+playImage = tk.PhotoImage(file=resource_path('./asset/play.png'))
 buttonPlay = tk.Button(playerFrame, image=playImage, command=musicPlay)
 buttonPlay.pack(side='left', anchor='nw')
 #一時停止ボタン
@@ -81,7 +85,7 @@ def musicPause():
     pygame.mixer.music.pause()
     pauseNow = True
 #GUI
-pauseImage = tk.PhotoImage(file='./asset/pause.png')
+pauseImage = tk.PhotoImage(file=resource_path('./asset/pause.png'))
 buttonPause = tk.Button(playerFrame, image=pauseImage, command=musicPause)
 buttonPause.pack(side='left', anchor='nw')
 
@@ -91,7 +95,7 @@ def musicStop():
     pygame.mixer.music.stop()
     pauseNow = False
 #GUI
-stopImage = tk.PhotoImage(file='./asset/stop.png')
+stopImage = tk.PhotoImage(file=resource_path('./asset/stop.png'))
 buttonStop = tk.Button(playerFrame, image=stopImage, command=musicStop)
 buttonStop.pack(side='left', anchor='nw')
 
@@ -103,7 +107,7 @@ def musicLoop():
         else:
             pygame.mixer.music.play(0)
 #GUI
-loopImage = tk.PhotoImage(file='./asset/refresh-sharp.png')
+loopImage = tk.PhotoImage(file=resource_path('./asset/refresh-sharp.png'))
 loopChecked = tk.BooleanVar()
 loopChecked.set(False)
 checkLoop = tk.Checkbutton(playerFrame, image=loopImage, var=loopChecked, command=musicLoop)
