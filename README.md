@@ -13,7 +13,7 @@ Pythonを使い、再生、一時停止、停止、ループ、ボリューム�
 自己責任で使ってね♪
 ### ライセンス
 Neya-Tetsu Music Playerは、オープンソースプロジェクトです。  
-[GNU LGPL v2.1](LISENCE)でライセンスされています。
+[GNU LGPL v2.1](LICENSE)でライセンスされています。
 ## English (Translate by Google and Neya)
 ### About Neya-Tetsu Music Player
 This is a super simple music player developed by Neya.  
@@ -26,6 +26,6 @@ Using Python, I created a music player with only play, pause, stop, loop and vol
 5th, enjoy music.
 ### Disclaimer
 Please use at your own risk.
-### Lisence
+### License
 Neya-Tetsu Music Player is open source project.  
-It is licensed under the [GNU LGPL v2.1](LISENCE).
+It is licensed under the [GNU LGPL v2.1](LICENSE).
