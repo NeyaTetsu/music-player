@@ -3,6 +3,10 @@
 ### Neya-Tetsu Music Playerとは
 ねやが開発した、超シンプルな音楽プレイヤーです。  
 Pythonを使い、再生、一時停止、停止、ループ、ボリューム調整機能のみの音楽プレイヤーを作成しました。
+### 対応ファイル
+・WAV
+・MP3
+・OGG
 ### 使い方
 壱、アプリケーションを開く。  
 弐、ファイル選択。  
@@ -18,6 +22,10 @@ Neya-Tetsu Music Playerは、オープンソースプロジェクトです。
 ### About Neya-Tetsu Music Player
 This is a super simple music player developed by Neya.  
 Using Python, I created a music player with only play, pause, stop, loop and volume control features.
+### Supported file
+・WAV
+・MP3
+・OGG
 ### How to use
 1st, open the application.  
 2nd, file selection.  
